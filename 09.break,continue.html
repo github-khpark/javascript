@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>09.break,continue</title>
+</head>
+<body>
+    <script>
+        //break; 제어문을 빠져나오기위해 사용한다.
+        //문제)index가 5가 되면 반복문을 종료시키기
+        for (let index = 0; index < 10; index++) {  //10번 반복하는 구문
+            if(index==5){
+                break;
+            }
+            document.write(index, ' ');
+        }
+        document.write('<hr>');
+
+        //continue; 제어문에서 continue를 만나면 이후 문장을 건너뛰고 다시 반복실행
+        //문제)5를 제외한 숫자를 출력하기
+        for (let index = 0; index < 10; index++) {  //10번 반복하는 구문
+            if(index==5){
+                continue;
+            }
+            document.write(index, ' ');
+        }
+        document.write('<hr>');
+
+        //문제)5의 배수가 아닌 숫자만 출력하기
+        for (let index = 1; index <= 100; index++) {
+            if(index%5==0){
+                continue;
+            }
+            document.write(index, ' ');
+        }
+        document.write('<hr>');
+
+    </script>
+</body>
+</html>

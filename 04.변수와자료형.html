@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>04.변수와 자료형</title>
+</head>
+<body>
+    <script>
+        /*
+            [변수]
+            값을 저장하는 식별자로 변수를 선언하고 값을 할당(저장)할 수 있다.
+            변수의 값은 변경할 수 있다.
+            변수에는 다양한 자료형을 저장할 수 있다.
+            변수명은 대소문자를 구분한다.(매우중요!)
+        */
+
+        var num;    //num이라는 변수를 선언한 상태(값은 저장되어 있지 않음)
+        num=10;     //num이라는 변수에 10을 할당한 상태        
+        console.log(num);
+
+        var num=10; //num이라는 변수를 선언과 동시에 값을 할당한 상태
+        var num1, num2, num3;   //변수 여러개를 동시에 선언할 때 쉼표를 사용
+        num1=1;
+        num2=2;
+        num3=3;
+
+        /*
+            [자료형]
+            변수에 담긴 자료의 형식(종류)
+
+            [자료형의 종류]
+            undefined : 정의 되지 않은 상태
+            numver : 숫자
+            string : 문자
+            bollean : 논리(참 또는 거짓)
+            function : 함수
+            object : 객체
+        */
+
+        var nothing;
+        var num=10;
+        var text='문자';
+        var flag=true;
+        var myFunction=function(){
+            return '함수';
+        }
+        var array=[1,2,3];
+        var obj={
+            name:'admin',
+            age:35
+        }
+
+        //typeof(자료형 또는 변수) : 내가 선언한 변수의 자료형이 무엇인지 검사할때 사용함.
+        console.log('선언:',nothing, typeof(nothing));
+        console.log('숫자:',num, typeof(num));
+        console.log('문자:',text, typeof(text));
+        console.log('논리:',flag, typeof(flag));
+        console.log('함수:',myFunction, typeof(myFunction));
+        console.log('배열:',array, typeof(array));
+        console.log('객체:',obj, typeof(obj));
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>15.전역변수와 지역변수</title>
+</head>
+<body>
+    <script>
+        /*
+            전역변수(Global Variable)
+            함수 외부에서 선언된 변수로 전체구간에서 쓰인다.
+            함수 내부에서 var키워드 없이 변수를 만들었다면 전역변수로 인식된다.
+
+            지역변수(Local Variable)
+            함수 내부에서 var키워드로 선언된 변수로 함수를 호출하면 생성이되고 
+            함수 안의 코드를 다 읽고 나면 소멸되는 변수이다.
+            함수 외부에서는 지역변수에 접근할 수 없다.
+            함수 안에서 변수를 선언시 var키워드를 반드시 붙여야 지역변수가 된다.        
+
+            *매개변수, 지역변수는 함수블록스코프안에서만 사용할 수 있는 변수이다.
+        */
+        
+        var num1=10;    //전역변수
+
+        function test(num4){
+            var num1=20;    //지역변수
+            num2=30;        //전역변수
+            var num3=40;    //지역변수
+            document.write('함수 내부에서 출력, 지역변수:', num1, '<br>');
+            document.write('함수 내부에서 출력, 전역변수:', num2, '<br>');
+            document.write('함수 내부에서 출력, 지역변수:', num3, '<br>');
+            document.write('함수 내부에서 출력, 매개변수:', num4, '<br>');
+        }
+        //함수호출
+        test(50);
+
+        document.write('함수 외부에서 출력, 전역변수:', num1, '<br>');
+        document.write('함수 외부에서 출력, 전역변수:', num2, '<br>');
+        // document.write('함수 외부에서 출력, 지역변수:', num3, '<br>');  //오류발생, function안에 있는 지역변수이기 때문에
+        document.write('함수 내부에서 출력, 매개변수:', num4, '<br>');  //오류발생, function안에서만 사용됨
+    </script>
+</body>
+</html>

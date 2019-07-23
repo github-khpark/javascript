@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>21.내장객체Date</title>
+</head>
+<body>
+    <h2>현재날짜 시간 출력하기</h2>
+    <div id="today"></div>
+    <script>
+        //Date : 날짜, 시간, 요일에 대한 정보가 들어있는 객체
+        function startDate(){
+            var now=new Date();
+            var year=now.getFullYear(); //년도
+            var month=now.getMonth();   //월 *0일 부터 시작하므로 +1을 해준다.
+            var date=now.getDate();     //일
+            var day=now.getDay();       //요일 *요일의 정보를 0~6까지 숫자로 변환한다.
+            var hours=now.getHours();   //시
+            var minutes=now.getMinutes();   //분
+            var seconds=now.getSeconds();   //초
+            var mSeconds=now.getMilliseconds(); //밀리세컨즈 1초=1000밀리세컨즈
+            var ampm='오전';    //오전 또는 오후가 저장될 변수
+
+            if(hours >12){
+                ampm='오후';
+                hours=hours-12;
+            }
+
+            //요일 구하기
+            var days=['일', '월', '화', '수', '목', '금', '토'];
+
+            //두자리 패턴으로 나와야하는 변수는 zero()함수를 거쳐서 출력
+            //년도.월.일(요일) 오전 시간:분:초:밀리세컨즈
+            //yyyy.mm.dd (day) 오전 00:00:00:000
+            var dateVal=`${year}.${zero(month)}.${zero(date)} (${days[day]})`;
+            var timeVal=`${ampm} ${zero(hours)}:${zero(minutes)}:${zero(seconds)}:${mSeconds}`;
+
+            //today라는 아이디를 가진 요소에 접근하여 내용을 갱신한다.
+            document.getElementById('today').innerHTML=dateVal+'<br>'+timeVal;
+        }
+        //함수호출(한번만 호출)
+        // startDate();
+
+        setInterval(startDate, 10);
+
+        //한자리수일 경우 두자리 패턴으로 만들어주는 함수
+        function zero(num){
+            //전달받은 숫자가 10보다 작을 경우 0~9
+            if(num<10){
+                //숫자 앞에 0을 문자열로 붙여서 반환을 하고
+                num='0'+num;
+            }
+            //조건문을 만족하지 않을 경우 10이상, 그대로 리턴
+            return num;
+        }
+
+        //다른 메소드를 사용하여 날짜 시간 출력하기
+        function startDate2(){
+            var day=new Date().getDay();
+            var days=['일', '월', '화', '수', '목', '금', '토'];
+
+            //1.toLocaleDateString()과 toLocaleTimeString()은 두자리씩 나오지 않는다.
+            // document.getElementById('today').innerHTML=
+            // new Date().toLocaleDateString()+days[day]
+            // +new Date().toLocaleTimeString();
+
+            //2.
+            document.getElementById('today').innerHTML=
+            new Date().toJSON().slice(0, 10)+days[day]
+            +new Date().toTimeString().slice(0, 8);
+        }
+        setInterval(startDate2, 10);
+
+    </script>
+</body>
+</html>

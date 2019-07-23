@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>05.연산자</title>
+</head>
+<body>
+    <script>
+        //1.사칙연산, 나머지연산
+        //+, =, *, /, %
+        var num1=10, num2=2;
+        document.write('<h4>사칙연산자, 나머지연산자</h4>');
+        document.write(num1+num2, '<br>');  //12
+        document.write(num1-num2, '<br>');  //8
+        document.write(num1*num2, '<br>');  //20
+        document.write(num1/num2, '<br>');  //5
+        document.write(num1%num2, '<br>');  //0
+
+        //2.비교연산자(비교연산의 결과는 논리형이다.)
+        // >, <, >=, <=, ==, !=, ===, !==
+        document.write('<h4>비교연산자</h4>');
+        document.write(num1>num2, '<br>');      //true
+        document.write(num1<num2, '<br>');      //false
+        document.write(num1>=num2, '<br>');     //true
+        document.write(num1<=num2, '<br>');     //false
+        document.write(num1==num2, '<br>');     //false
+        document.write(num1!=num2, '<br>');     //true
+        
+        document.write('10'==10, '<br>');       //값만 비교 true
+        document.write('10'===10, '<br>');      //값과 자료형을 함께 비교(자료형이 일치하는지를 비교) flase
+        document.write('10'!==10, '<br>');      //true
+
+        //3.대입연산자(단순대입)
+        //오른쪽의 값을 왼쪽에 대입한다.
+        document.write('<h4>대입연산자</h4>');
+        num1=1;//원래 10이었지만 1로 바꾼다.
+        document.write(num1, '<br>');
+
+        //4.복합대입연산자(변수의 값에 연산처리를 하여 다시 대입)
+        //+=, -=, *=, /=, %=
+        document.write('<h4>복합대입연산자</h4>');
+        document.write(num1+=2, '<br>');    //num1=num1+2= 1+2= 3
+        document.write(num1-=2, '<br>');    //num1=num1-2= 3-2= 1
+        document.write(num1*=2, '<br>');    //num1=num1*2= 1*2= 2
+        document.write(num1/=2, '<br>');    //num1=num1/2= 2/2= 1
+        document.write(num1%=2, '<br>');    //num1=num1%2= 1%2= 1
+
+        //5.논리연산자(참, 거짓을 판별)
+        //&& (and, 그리고, 논리곱) 모두 참이어야 결과가 참
+        //|| (or, 또는, 논리합) 하나라도 참일경우 결과가 참
+        //! (not, 아니다, 부정) 결과를 반대로 만들경우
+        document.write('<h4>논리연산자</h4>');
+        document.write(true && true, '<br>');   //true
+        document.write(true && false, '<br>');  //false
+        document.write(false && true, '<br>');  //false
+        document.write(false && false, '<br>');  //false
+
+        document.write(true || true, '<br>');   //true
+        document.write(true || false, '<br>');  //true
+        document.write(false || true, '<br>');  //true
+        document.write(false || false, '<br>');  //false
+
+        document.write(!false || !false, '<br>');  //true
+
+        //6.증감연산자(기존의 변수에 1씩 증감처리)
+        //++(1증가), --(1감소)
+        //선처리와 후처리가 있다.
+        //변수 앞에 붙으면 선처리, 변수 뒤에 붙으면 후처리
+        document.write('<h4>증감연산자</h4>');
+        num1=1;
+        document.write(++num1, '<br>'); //2
+        document.write(++num1, '<br>'); //3
+        document.write(num1++, '<br>'); //3
+        document.write(num1++, '<br>'); //4
+        document.write(++num1, '<br>'); //6
+        document.write(--num1, '<br>'); //5
+        document.write(--num1, '<br>'); //4
+        document.write(num1--, '<br>'); //4
+        document.write(num1--, '<br>'); //3
+        document.write(--num1, '<br>'); //1
+
+        //7.삼항연산자
+        //논리표현식?참일때 실행:거짓일때 실행
+        document.write('<h4>삼항연산자</h4>');
+        var result=10>2?'네':'아니오';
+        document.write(result, '<br>'); //네
+
+        var num=prompt('숫자입력');
+        result=num>0?'양수':'음수';
+        document.write(result, '<br>')
+    </script>
+</body>
+</html>

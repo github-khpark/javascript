@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>19.객체</title>
+</head>
+<body>
+    <script>
+        /*
+            여러개의 데이터를 저장하기 위한 방법
+            1. 배열 : 위치값(index)로 접근해서 값을 저장하며 []를 사용한다.
+            2. 객체 : 키값(속성)으로 접근해서 값을 저장하며 {}를 사용한다.
+        */
+
+        //문제) 폰의 정보를 저장하시오.
+        // 갤럭시, 삼성, 900000, black
+
+        //배열 
+        var phone1=['갤럭시', '삼성', 900000, 'black'];
+        console.log(phone1[0]);        
+
+        //1.객체의 선언 및 저장
+        /*
+            객체의 패턴
+            var 객체이름={
+                속성이름:값,
+                속성이름:값,
+                속성이름:값,
+                ...
+            }
+        */
+        var phone2={
+            name:'갤럭시',
+            company:'삼성',
+            price:900000,
+            color:'black'
+        };
+        console.log(phone2["name"], phone2.name);
+
+        //2.객체안에 있는 값 가져오기
+        //첫번째 방법 : 객체명.속성이름
+        document.write(phone2.color);
+        //두번째 방법 : 객체명['속성이름'] *주의사항:속성이름을 문자열로 넣어야한다.
+        document.write(phone2["color"]);
+
+        //3.객체안의 값 변경하기
+        phone2.color='blue';
+        document.write('<br> 변경된 색상:', phone2['color']='red');
+        
+        //4.객체안에 새로운 값 저장하기 
+        //powerOn은 함수를 담고 있기 때문에 속성이 아닌 메소드이다.
+        phone2.powerOn=function(){
+            return '전원을 켭니다.';
+        }
+        phone2.powerOff=function(){
+            return '전원을 끕니다.';
+        }
+        //powerOn()은 phone2의 메소드다.
+        document.write(phone2.powerOn());
+
+        //5.반복문을 사용하여 객체안의 값 순차적으로 출력하기 
+        document.write('<h4>phone2의 정보 출력<h4>');
+        for (const key in phone2) {
+            // console.log('값의 타입은?',typeof phone2[key] == 'function');         
+            // 만약에 값의 타입이 function이라면
+            if(typeof phone2[key] == 'function'){
+                // key값이 powerOn인 경우는 메소드 호출하는 방식으로 출력
+                document.write(phone2[key](),'<br>');
+            }else{
+                document.write(phone2[key],'<br>');
+            }         
+        }      
+        document.write('<hr>');
+
+        //문제)나의 정보를 객체로 만들고 출력하기
+        //이름, 나이, 사는곳, 좋아하는 색깔들(배열),
+        //어떤것을 먹는다(메소드):음식을 메소드 호출시 전달
+        var person={
+            name:'박경현',
+            age:28,
+            adress:'인천',
+            colors:['black', 'pink', 'white', 'blue'],
+            eat:function(food){
+                return food+'을(를) 먹는다.';
+            }  
+        }
+           
+        //반복문을 사용하지 않고 개별적으로 출력
+        document.write('name:',person.name,'<br>');
+        document.write('age:',person.age,'<br>');
+        document.write('place:',person.place,'<br>');
+        document.write('colors:',person.colors[0], person.colors[1], person.colors[2], person.colors[3], '<br>');
+        document.write('eat:',person.eat('고기'),'<br>');
+        document.write('<hr>');
+
+        //반복문을 사용하여 person의 정보 출력하기
+        for (const key in person) {
+            //키값을 먼저 찍는다.
+            document.write(key,':');
+
+            //그다음 값을 조건문을 통과하여 찍는다.
+            if(key == 'colors'){   //배열
+                for (const i in person[key]) {
+                    document.write(person[key][i]);    
+                }
+            document.write('<br>');
+            }else if(key == 'eat'){   //메소드
+                document.write(person[key]('고기'),'<br>');
+            }else{  //데이터가 숫자 또는 문자
+                document.write(person[key],'<br>');
+            }       
+        }   
+
+    </script>
+</body>
+</html>

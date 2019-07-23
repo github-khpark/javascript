@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>20.내장객체String</title>
+</head>
+<body>
+    <script>
+        //String : 문자열을 저장하고 조작할 수 있다.
+        var text='Hello! Javascript!';  //많이 사용하는 방식
+        //생성자 함수로 작성시
+        text=new String('Hello! Javascript!');
+
+        document.write(`<h3>${text}</h3>`);
+        document.write(`문자열의 길이: ${text.length}<br>`);    //공백 카운트 포함
+
+
+        document.write(`<h3>문자열의 위치찾기</h3>`);
+        document.write(`!의 위치: ${text.indexOf('!')}<br>`);
+        document.write(`마지막 !의 위치: ${text.lastIndexOf('!')}<br>`);
+        document.write(`특정위치부터 !의 위치: ${text.indexOf('!',7)}<br>`);
+
+
+        document.write(`<h3>문자열 자르기</h3>`);
+        document.write(`${text.slice(7)}<br>`); //start지점
+        document.write(`${text.slice(7,10)}<br>`);  //start,end지점
+        //slice에서 -값을 넣으면 뒤에서부터 자름
+        //subString은 -값을 적용할 수 없다.
+        document.write(`${text.slice(0,-12)}<br>`);
+        document.write(`${text.substring(7)}<br>`);
+        document.write(`${text.substring(7,10)}<br>`);
+        //substr(from, length) 두번째 인자값이 길이를 뜻한다. 몇개 가져올 것인가.
+        document.write(`${text.substr(7,5)}<br>`);
+
+
+        document.write(`<h3>문자열 바꾸기</h3>`);
+        document.write(`${text.replace('!', '~')}<br>`);
+        // /정규표현식/g는 전역을 뜻함. i 대소문자 구분없이
+        document.write(`${text.replace(/!/g, '~')}<br>`);
+        document.write(`${text.replace('Hello', '안녕')}<br>`);
+        document.write(`${text.replace(/hello/i, '안녕')}<br>`);
+        document.write(`${text.toUpperCase()}<br>`);
+        document.write(`${text.toLowerCase()}<br>`);
+
+
+        document.write(`<h3>해당위치(인덱스)의 문자반환</h3>`);
+        document.write(`5번째 위치의 문자: ${text.charAt(5)}<br>`);
+        document.write(`5번째 위치의 문자: ${text[5]}<br>`);
+
+
+        document.write(`<h3>문자열 붙이기</h3>`);
+        document.write(`${text.concat('-','문자열', '또 붙이다.')}<br>`);   //갯수 제한없음
+
+
+        document.write(`<h3>문자열 분할</h3>`);
+        document.write(`${text.split('!')}<br>`);
+
+    </script>
+</body>
+</html>

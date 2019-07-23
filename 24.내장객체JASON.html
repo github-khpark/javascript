@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>24.내장객체JASON</title>
+</head>
+<body>
+    <script>
+        /*
+            JASON : 객체 형태를 가지는 문자열
+            문자열 형식이므로 서버와 데이터를 주고받을 때 사용하여
+            프로그래밍 언어에서 데이터저장 형식으로 많이 활용된다.
+            객체를 JASON문자열로 변환처리해주기 위해서 stringify()를 사용하고
+            데이터를 사용할 때 다시 객체로 변환처리해주는 parse()를 사용한다.
+
+            stringify() : 객체를 JASON문자열로 변환
+            parse() : JASON문자열을 객체로 변환
+        */
+
+        var person={name:'홍길동', age:'40', city:'서울'};
+        console.log(typeof person); //typeof=object
+        document.write(person+'<br>');
+
+        //객체를 JASON문자열로 변환하기
+        var jasonPerson=JSON.stringify(person);
+        console.log(typeof jasonPerson);    //typeof=string
+        document.write(jasonPerson+'<br>');
+
+        //localStorage에 JASON데이터 저장하기
+        //F12>Application>Storage>localStorage
+        localStorage.setItem('person',jasonPerson);
+
+        //JASON문자열을 객체로 변환하기
+        var objPerson=JSON.parse(jasonPerson);
+        console.log(typeof objPerson);  //typeof=object
+        document.write(objPerson+'<br>');        
+
+    </script>
+</body>
+</html>

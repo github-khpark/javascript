@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>03.문자열</title>
+</head>
+<body>
+    <script>
+        //문자열은 작은따음표 또는 큰따음표로 감싸서 출력한다.
+        document.write('안녕하세요.');
+        document.write("안녕하세요.");
+        // document.write(안녕하세요);//오류
+        
+        document.write('<hr>');
+        document.write('<h2>문자열과 숫자 연결</h2>');
+        document.write("10"+10);
+
+        document.write('<h2>문자열과 문자열 연결</h2>');
+        document.write("10"+"10");
+
+        document.write('<h2>문자열+숫자+숫자 연결</h2>');
+        document.write("10"+10+10); //문자열1010+숫자10=101010
+
+        document.write('<h2>숫자+숫자+문자열 연결</h2>');
+        document.write(10+10+"10"); //숫자20+문자열10=2010
+
+        document.write('<h2>숫자+문자열+숫자 연결</h2>');
+        document.write(10+"10"+10);
+
+        document.write('<h2>문자열+(숫자+숫자) 연결</h2>');
+        document.write("10"+(10+10)); //1020
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>13.함수실행우선순위</title>
+</head>
+<body>
+    <script>
+        //1. 익명함수가 두번 연속 같은 이름으로 쓰였을 때
+        var f1 = function(){alert('익명함수1')} //먼저 읽고
+        var f1 = function(){alert('익명함수2')} //나중에 읽음
+        
+        //익명함수 호출하기
+        // f1();
+
+        var num=1;
+        var num=2;
+        document.write(num);
+
+        //2. 선언적함수가 두번 연속 같은 이름으로 쓰였을 때
+        function f2(){alert('선언적함수1')} //먼저 읽고
+        function f2(){alert('선언적함수2')} //나중에 읽음
+        // f2();
+
+        //3. 익명함수와 선언적함수가 똑같은 이름으로 쓰였을 때
+        // var f3 = function(){alert('익명함수')}  //나중에 읽음
+        // function f3(){alert('선언적함수')}      //먼저 읽고
+
+        //순서를 뒤바꿔서 테스트해도 결과는 같다.
+        function f3(){alert('선언적함수')}      //먼저 읽고
+        var f3 = function(){alert('익명함수')}  //나중에 읽음        
+        f3();
+
+    </script>
+</body>
+</html>

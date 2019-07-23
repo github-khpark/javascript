@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>25.BOM</title>
+</head>
+<body>    
+    <script>
+        /*
+            BOM : 웹브라우저와 관련된 객체의 집합
+            window : 웹브라우저의 최상위 객체
+            - screen    : 화면
+            - navigator : 웹브라우저 (pc, mobile 인지)
+            - location  : 주소
+            - history   : 기록
+            - document  : 문서
+        */
+
+        //새창 열기
+        // window.open('24.내장객체JASON.html','새창열기','width=300, height=300');
+
+        //문서 로드
+        window.onload=function(){
+            alert('문서 로드 완료');
+
+            //아이디가 result인 요소의 내용 변경하기
+            document.getElementById('result').innerText='내용변경';
+        }
+
+        //2초 뒤에 다른 페이지로 이동하기
+        setTimeout(function(){
+            //a태그에 기본적으로 있는 href속성을 location객체가 가지고 있다.
+            location.href='24.내장객체JASON.html';  //<a>태그를 사용한 효과
+        }, 2000);
+    </script>
+
+    <div id="result">결과</div>
+    <a href="24.내장객체JASON.html">링크</a>
+</body>
+</html>

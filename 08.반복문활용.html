@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>08.반복문활용</title>
+</head>
+<body>
+    <script>
+        //문제)1부터 100까지 2의 배수의 합계를 구하세요.
+        var sum=0;
+        for (let index = 1; index <= 100; index++) {
+            if(index%2==0){
+                document.write(index, ' ');                
+                sum+=index; //sum=sum+index;
+            }
+        }
+        document.write('합계', sum);
+        document.write('<hr>');
+
+        //문제)confirm()을 활용하여 확인버튼을 누르면 계속 출력하고 취소버튼을 누르면 출력을 종료
+        var i=0;
+        while(true){    //항상 참인 조건식을 만든다.
+            if(!confirm('계속 출력하시겠습니까?')){
+                break;  //반복문을 멈춘다.
+            }
+            i++;    //1씩 증가
+            alert(i+'번째 출력');
+        }
+        document.write('프로그램이 종료되었습니다.');
+        document.write('<hr>');
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>07.반복문</title>
+</head>
+<body>
+    <script>
+        //반복문 : 조건에 맞을 경우 중괄호 안의 구문을 반복적으로 실행하는 것
+        /*
+            var : 전역구간, for문 밖에서도 인식
+            let : for문 안에서만 사용가능
+            const : for문 안에서만 사용가능, 한번지정하면 값이 변경 될 수 없다.
+
+            for (초기식; 조건식; 종결식) {
+                조건을 만족할 경우 실행할 문장;            
+            }
+        */ 
+
+        document.write('<h3>for문</h3>');
+        //문제)0부터 50까지 출력하세요.
+        for (let index = 0; index < 51; index++) {
+            document.write(index, ' ');            
+        }
+        document.write('<hr>');
+        //문제)1부터 100까지 출력하세요.
+        for (let index = 1; index <= 100; index++) {
+            document.write(index, ' ');            
+        }
+        document.write('<hr>');
+        //문제)100부터 1까지 출력하세요.
+        for (let index = 100; index > 0; index--) {
+            document.write(index, ' ');            
+        }
+        document.write('<hr>');
+        //문제)1부터 100까지 2의 배수만 출력하세요.
+        for (let index = 1; index <= 100; index++) {
+            if (index%2==0) {
+                document.write(index, ' ');                
+            }            
+        }
+        document.write('<hr>');
+        for (let index = 2; index <= 100; index+=2) {
+            document.write(index, ' ');            
+        }
+        document.write('<hr>');
+        
+        /*
+            초기식; 1
+            while (조건식) {    2
+                조건식을 만족할 경우 수행할 문장    3 or 4
+                종결식; 4 or 3
+            }
+        */
+
+        document.write('<h3>while문</h3>');
+        //문제)0부터 50까지 출력하세요.
+        var i=0;    //초기식
+        while (i<=50) { //조건식
+            document.write(i, ' ');
+            i++;    //종결식
+        }
+        document.write('<hr>');
+
+        //문제)1부터 100까지 출력하세요.
+        var i=1;
+        while (i<=100) {
+            document.write(i, ' ');
+            i++;
+        }
+        document.write('<hr>');
+
+        //문제)100부터 1까지 출력하세요.
+        var i=100;
+        while (i>0) {
+            document.write(i, ' ');
+            i--;
+        }
+        document.write('<hr>');
+
+        //문제)1부터 100까지 2의 배수만 출력하세요.
+        var i=2;
+        while (i<=100) {
+            document.write(i, ' ');
+            i+=2;
+        }
+        document.write('<hr>');
+
+        var i=1;
+        while (i<=100) {
+            if (i%2==0) {
+                document.write(i, ' ');                
+            } 
+            i++;
+        }
+        document.write('<hr>');
+        
+    </script>
+</body>
+</html>
