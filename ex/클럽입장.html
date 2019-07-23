@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>클럽입장</title>
+</head>
+<body>
+    <script>
+        /*
+            문제)여자이면서 20대일 경우 입장하도록 처리하세요.
+            조건)
+            1. prompt()를 사용하여 성별을 받는다.
+            2. prompt()를 사용하여 나이를 받는다.
+            3. 조건문을 사용하여 성별이 여자이고, 나이가 20대(20~29)일 경우 '입장' 출력
+               성별이 남자일 경우 '여자만 가능합니다.' 출력
+               성별은 여자이나 나이가 20대에 포함되지 않을 경우 '20대가 아닙니다.' 출력
+        */    
+
+        var gender=prompt('당신의 성별은? 남 또는 여를 입력하세요.'); 
+        var age=prompt('나이는? 숫자로 입력하세요.');
+        console.log(gender, age);
+        
+        if(gender=='여'){//여자일 경우
+            if(age >= 20 && age < 30){
+                document.write('입장하세요.');
+            }else{
+                document.write('20대가 아닙니다.');
+            }
+        }else{//남자일 경우
+            document.write('여자만 가능합니다.')
+        }
+    
+    </script>
+</body>
+</html>

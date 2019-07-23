@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>학점판별</title>
+</head>
+<body>
+    <script>
+        /*
+            문제)국어, 영어, 수학 점수를 prompt()로 각각 입력받고 
+            1.각 성적 점수 출력 
+            2.과목 합계 출력 
+            3.평균 점수 출력
+            4.학점 출력 기준 
+                평균이 90점 이상 - A
+                평균이 80점 이상 - B
+                평균이 70점 이상 - C
+                평균이 60점 이상 - D
+                그외 - F        
+        */
+
+        var kor=Number(prompt('국어점수를 입력하세요.')); 
+        var eng=Number(prompt('영어점수를 입력하세요.')); 
+        var math=Number(prompt('수학점수를 입력하세요.'));
+        var sum=kor+eng+math;
+        var avg=sum/3;
+        var grade;
+        console.log(typeof(sum));
+
+        //학점 판별하기
+        if(avg>=90){
+            grade='A';
+        }else if(avg>=80){
+            grade='B';
+        }else if(avg>=70){
+            grade='C';
+        }else if(avg>=60){
+            grade='D';
+        }else{
+            grade='F';
+        }
+
+        document.write('국어:'+kor+'<br>');
+        document.write('영어:'+eng+'<br>');
+        document.write('수학:'+math+'<br>');
+        document.write('합계:'+sum+'<br>');
+        document.write('평균:'+Math.floor(avg)+'<br>');
+        document.write('학점:'+grade+'<br>');
+
+        /*
+            Math.floor() : 소숫점 떼버림
+            Math.round() : 소숫점 반올림
+        */
+    
+    </script>
+</body>
+</html>

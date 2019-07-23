@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>배열값계산</title>
+</head>
+<body>
+    <script>
+        //문제)배열에 있는 숫자의 합계를 계산하시오.
+        var moneys=[10000,200,20340,500,23000];
+        var total=0;
+
+        for(var i=0; i<moneys.length; i++){
+            total=total+moneys[i];  //total+=moneys[i];
+        }
+        document.write('합계:', total);
+
+        var total=0;
+        for (const i in moneys) {
+            total+=moneys[i];
+        }
+        document.write('합계:', total);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>구구단 출력하기</title>
+    <style> 
+        b, span{
+            display: inline-block; width: 60px; text-align: center;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        //문제1) prompt()를 사용하여 단을 입력받아서 출력하세요.
+        //3을 입력받으면 3단이 나와야함. 
+        // var num=prompt('몇 단을 출력하시겠습니까?');
+        // document.write('<h4>', num, '단이 출력됬습니다.', '</h4>');
+        // for(var j=1; j<=9; j++){            
+        //     document.write(num, '*', j, '=', num*j,'<br>');
+        // }        
+        // document.write('<hr>');
+
+        //문제2) 2단부터 9단까지 모두 출력하세요.
+        // for(var i=2; i<=9; i++){
+        //     document.write('<h4>', i, '단', '</h4>');
+        //     for(var j=1; j<=9; j++){
+        //         document.write(i, '*', j, '=', i*j,'<br>');
+        //     }
+        // }
+
+        //문제2) 표형태로 2단부터 9단까지 모두 출력하세요.
+        document.write('<h3>구구단</h3>');                       
+        for(var i=2; i<=9; i++){
+            document.write('<b>', i, '단', '</b>');                       
+        }
+        document.write('<br>');              
+        for(var j=1; j<=9; j++){
+            for(var i=2; i<=9; i++){
+                document.write('<span>', i, '*', j, '=', i*j, '</span>');
+            }            
+            document.write('<br>');              
+        }        
+    </script>
+</body>
+</html>
