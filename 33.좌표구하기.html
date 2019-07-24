@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>33.좌표구하기</title>
+    <style>
+        body{height: 3000px;}
+        label{
+            display: inline-block;
+            width: 60px;
+            text-align: right;
+            padding-right: 10px;
+        }
+        #box{
+            width: 300px;
+            height: 300px;
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h2>좌표구하기(document에서 움직였을 때)</h2>
+    <form name="form" action="">
+        <label>clientX</label><input type="text" name="client_x"><br>
+        <label>clientY</label><input type="text" name="client_y"><br>
+        <label>pageX</label><input type="text" name="page_x"><br>
+        <label>pageY</label><input type="text" name="page_y"><br>
+        <label>screenX</label><input type="text" name="screen_x"><br>
+        <label>screenY</label><input type="text" name="screen_y">
+    </form>
+    <p>offsetX, offsetY(특정 영역안에서 움직였을때)</p>
+    <div id="box" onmousemove="position(event)"></div>
+
+    <script>
+        /*
+            *client와 page는 스크롤이 발생되지 않는다면 차이가 없다.
+            client  : 보이는 브라우저 화면 기준
+            page    : 전체 문서 기준(스크롤 값까지 포함)
+            screen  : 모니터화면 기준
+            offset  : 이벤트 대상 기준
+        */
+
+        document.onmousemove=function(e){
+            //form이라는 name속성안에 태그안에 name속성의 이름이 client_x인 입력창에 값을 좌표값으로 변경
+            form.client_x.value=e.clientX;
+            form.client_y.value=e.clientY;
+            form.page_x.value=e.pageX;
+            form.page_y.value=e.pageY;
+            form.screen_x.value=e.screenX;
+            form.screen_y.value=e.screenY;
+        }
+
+        function position(e){
+            document.getElementById('box').innerHTML=e.offsetX+','+e.offsetY;
+        }
+    </script>
+</body>
+</html>
