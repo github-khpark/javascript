@@ -11,6 +11,11 @@
       //문제)이미지 폴더에 있는 고양이 이미지 10장 중 한장을 랜덤으로 찍으시오.
       //새로고침할 때마다 다른 이미지를 출력하도록 한다.
 
+      //index의 범위를 1~10까지 나오도록 작성한다.
+      var index=Math.floor(Math.random()*10)+1;
+      console.log(index);      
+      document.write('<img src="../img/cat'+index+'.jpg" alt="">');
+
    </script>
 </body>
 </html>
