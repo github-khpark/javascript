@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>31.요소추가하기</title>
+</head>
+<body>
+    <div id="box">
+        <p id="p1">첫번째 단락</p>
+        <p id="p2">두번째 단락</p>
+    </div>
+    <script>
+        //아이디가 box인 요소 선택
+        var box=document.getElementById('box');
+        
+        //p요소 생성하기
+        var p=document.createElement('p');
+        
+        //새로 생성할 p요소 안에 넣을 텍스트 내용
+        var text=document.createTextNode('새로운 단락생성');
+        
+        //appendChild()는 마지막 자식 위치에 붙이는 기능
+        //새로 생성할 p요소 안에 텍스트 노드 붙이기
+        p.appendChild(text);
+        
+        //아이디가 box인 요소안에 새로 생성할 p요소 붙이기
+        box.appendChild(p);
+
+
+        //아이디가 p1인 요소, p2인 요소 선택 
+        var p1=document.getElementById('p1');
+        var p2=document.getElementById('p2');
+
+        //아이디가 p1인 요소의 이전위치에 새로 생성한 p넣기 
+        box.insertBefore(p, p1);
+        box.insertBefore(p, p2);
+
+    </script>
+</body>
+</html>

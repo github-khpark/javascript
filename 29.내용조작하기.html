@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>29.내용조작하기</title>
+</head>
+<body>
+    <h1>제목</h1>
+    <script>
+       /*
+        시작태그와 끝태그로 이루어진 요소는 태그 사이에 내용을 가질 수 있다.
+        텍스트만 변경할 때는 innerText사용
+        텍스트와 태그를 함께 사용할 때는 innerHTML사용 
+       */
+
+       //1. 내용 변경하기 (set)
+       //innerText로 문자열 작성시 태그가 포함되어 있다면 태그도 일반 문자열로 인식한다.
+       document.getElementsByTagName('h1')[0].innerText='<i>제목변경</i>';
+       //innerHTML로 문자열 작성시 태그가 포함되어 있다면 태그로 인식한다.
+       document.getElementsByTagName('h1')[0].innerHTML='<i>제목변경</i>';
+
+       //write메소드는 특정요소를 지정하여 값을 변경하거나 속성을 저장할 수 없고 쓰기만 가능하다.
+       //body태그에 쓰기만 가능하다.
+       document.write('<i>제목변경</i>');
+
+       //2. 내용 가져오기 (get)
+       //innerText로 내용을 가져오면 텍스트만 가져온다.
+       var text=document.getElementsByTagName('h1')[0].innerText;
+       //innerHTML로 내용을 가져오면 태그가 있을 경우 태그도 포함하여 가져온다.
+       var html=document.getElementsByTagName('h1')[0].innerHTML;
+       alert(text + html);
+    </script>
+</body>
+</html>
