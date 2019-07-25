@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>이미지변경</title>
+</head>
+<body>
+   <img src="../img/pooh.png" alt="">
+   <button id="play">춤추기</button>
+   <button id="stop">정지</button>
+
+   <script>
+      //문제) 각 버튼을 눌렀을 때 이미지의 상태가 변경되게 처리하시오.
+      //pooh.png 정지된 푸 
+      //pooh.gif 움직이는 푸
+
+      //onclick 이벤트 사용(이벤트를 따로따로 연결), addEventListener(이벤트를 여러개 연결하여 사용 가능)
+
+      document.getElementById('play').onclick=function(){
+         // alert('춤추기');
+         document.getElementsByTagName('img')[0].setAttribute('src', '../img/pooh.gif');
+      }
+      
+      document.getElementById('stop').onclick=function(){
+         // alert('정지');
+         document.getElementsByTagName('img')[0].setAttribute('src', '../img/pooh.png');
+      }
+
+   </script>
+</body>
+</html>
